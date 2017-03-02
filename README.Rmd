@@ -39,7 +39,7 @@ sc_object(chorley) %>% slice(2L)
 data("nbfires", package= "spatstat")
 sc_path(spatstat::as.owin(nbfires))
 
-sc_coord(spatstat::as.owin(nbfires)) %>% summarize(n())
+print(sc_coord(spatstat::as.owin(nbfires)), n = 5)
 
 
 ```
@@ -48,8 +48,9 @@ With these three components working `sc_coord`, `sc_object` and `sc_path`, and u
 
 ```{r}
 library(sc)
-sc::PATH(spatstat::as.owin(nbfires))
+str(nbfires_path <- sc::PATH(spatstat::as.owin(nbfires)))
 
+PRIMITIVE(nbfires_path)
 ```
 
 (Note that only owin is supported so far, we need a way to intermingle structured "windows" and the underly patterns. The patterns may be points and or lines. )
