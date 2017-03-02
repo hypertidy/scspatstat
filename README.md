@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-\[![Travis-CI Build Status](https://travis-ci.org/mdsumner/scspatstat.svg?branch=master)\](<https://travis-ci.org/mdsumner/scspatstat> [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mdsumner/scspatstat?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/scspatstat) [![Coverage Status](https://img.shields.io/codecov/c/github/mdsumner/scspatstat/master.svg)](https://codecov.io/github/mdsumner/scspatstat?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/mdsumner/scspatstat.svg?branch=master)](https://travis-ci.org/mdsumner/scspatstat) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mdsumner/scspatstat?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/scspatstat) [![Coverage Status](https://img.shields.io/codecov/c/github/mdsumner/scspatstat/master.svg)](https://codecov.io/github/mdsumner/scspatstat?branch=master)
 
 scspatstat
 ==========
@@ -30,19 +30,19 @@ sc_object(chorley) %>% slice(2L)
 #> # A tibble: 1 × 2
 #>    object_   mark
 #>      <chr> <fctr>
-#> 1 a5aa7a25 larynx
+#> 1 33ed2959 larynx
 
 data("nbfires", package= "spatstat")
 sc_path(spatstat::as.owin(nbfires))
 #> # A tibble: 6 × 2
 #>   ncoords_    path_
 #>      <int>    <chr>
-#> 1      500 c3db7b61
-#> 2       92 1ff61ceb
-#> 3       80 30329d01
-#> 4       54 4ce61fe1
-#> 5       66 7e14a776
-#> 6       79 e87e1794
+#> 1      500 66ebf3ea
+#> 2       92 d2340bba
+#> 3       80 5a7b221b
+#> 4       54 ec2c12c5
+#> 5       66 d2d8b5f3
+#> 6       79 f7025177
 
 sc_coord(spatstat::as.owin(nbfires)) %>% summarize(n())
 #> # A tibble: 1 × 1
@@ -60,49 +60,49 @@ sc::PATH(spatstat::as.owin(nbfires))
 #> # A tibble: 1 × 5
 #>        type singular plural multiplier  object_
 #>       <chr>    <chr>  <chr>      <dbl>    <chr>
-#> 1 polygonal     unit  units          1 deb1addb
+#> 1 polygonal     unit  units          1 52e1c246
 #> 
 #> $path
 #> # A tibble: 6 × 2
 #>   ncoords_    path_
 #>      <int>    <chr>
-#> 1      500 7831ecaa
-#> 2       92 f3978f59
-#> 3       80 45386d83
-#> 4       54 fe330216
-#> 5       66 ffada0d8
-#> 6       79 525e5e3b
+#> 1      500 118d3985
+#> 2       92 94aade55
+#> 3       80 900e80de
+#> 4       54 f9d6ca5f
+#> 5       66 0a756d95
+#> 6       79 da2e4c6b
 #> 
 #> $vertex
 #> # A tibble: 871 × 3
 #>           x        y  vertex_
 #>       <dbl>    <dbl>    <chr>
-#> 1  415.2395 123.7442 a9af7163
-#> 2  415.5546 122.7946 9edbb397
-#> 3  419.1725 122.3231 bc05829c
-#> 4  423.8916 122.6374 40ebcf09
-#> 5  429.8691 124.8375 8d078d53
-#> 6  430.6556 133.0094 b540e46a
-#> 7  435.8466 132.0665 62406e69
-#> 8  436.1612 127.6663 bf981e74
-#> 9  438.2062 126.8805 a47b820c
-#> 10 445.7567 130.0235 c2f19a7c
+#> 1  415.2395 123.7442 5ad31232
+#> 2  415.5546 122.7946 f78d01db
+#> 3  419.1725 122.3231 b1339073
+#> 4  423.8916 122.6374 3914810b
+#> 5  429.8691 124.8375 fb65597a
+#> 6  430.6556 133.0094 c22d5305
+#> 7  435.8466 132.0665 d1fe859e
+#> 8  436.1612 127.6663 e39a1c8e
+#> 9  438.2062 126.8805 e9d47987
+#> 10 445.7567 130.0235 0dba38c2
 #> # ... with 861 more rows
 #> 
 #> $path_link_vertex
 #> # A tibble: 871 × 2
 #>       path_  vertex_
 #>       <chr>    <chr>
-#> 1  7831ecaa a9af7163
-#> 2  7831ecaa 9edbb397
-#> 3  7831ecaa bc05829c
-#> 4  7831ecaa 40ebcf09
-#> 5  7831ecaa 8d078d53
-#> 6  7831ecaa b540e46a
-#> 7  7831ecaa 62406e69
-#> 8  7831ecaa bf981e74
-#> 9  7831ecaa a47b820c
-#> 10 7831ecaa c2f19a7c
+#> 1  118d3985 5ad31232
+#> 2  118d3985 f78d01db
+#> 3  118d3985 b1339073
+#> 4  118d3985 3914810b
+#> 5  118d3985 fb65597a
+#> 6  118d3985 c22d5305
+#> 7  118d3985 d1fe859e
+#> 8  118d3985 e39a1c8e
+#> 9  118d3985 e9d47987
+#> 10 118d3985 0dba38c2
 #> # ... with 861 more rows
 #> 
 #> attr(,"class")
