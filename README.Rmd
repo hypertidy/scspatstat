@@ -6,6 +6,11 @@ output:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Travis-CI Build Status](https://travis-ci.org/mdsumner/scspatstat.svg?branch=master)](https://travis-ci.org/mdsumner/scspatstat
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mdsumner/scspatstat?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/scspatstat)
+[![Coverage Status](https://img.shields.io/codecov/c/github/mdsumner/scspatstat/master.svg)](https://codecov.io/github/mdsumner/scspatstat?branch=master)
+
+
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -16,14 +21,37 @@ knitr::opts_chunk$set(
 
 # scspatstat
 
-The goal of scspatstat is to ...
+The goal of `scspatstat` is to convert `spatstat` data structures to a generic common form that that can be used for conversion a wide variety of data structures.
+
+This is work in progress and at a very early stage. More to come.
+
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example showing the component decomposition of a spatstat point pattern. 
 
 ```{r example}
-## basic example code
+library(scspatstat)
+library(dplyr)
+data("chorley", package = "spatstat")
+sc_object(chorley) %>% slice(2L)
+
+data("nbfires", package= "spatstat")
+sc_path(spatstat::as.owin(nbfires))
+
+sc_coord(spatstat::as.owin(nbfires)) %>% summarize(n())
+
+
 ```
+
+With these three components working `sc_coord`, `sc_object` and `sc_path`, and using the framework in `sc`,  the parent package can use these *in generic form*. We can already convert to `PATH` and then on to `PRIMITIVE` for these polygonal forms in `spatstat`.
+
+```{r}
+library(sc)
+sc::PATH(spatstat::as.owin(nbfires))
+
+```
+
+(Note that only owin is supported so far, we need a way to intermingle structured "windows" and the underly patterns. The patterns may be points and or lines. )
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
