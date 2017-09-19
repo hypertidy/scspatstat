@@ -1,5 +1,6 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis-CI Build Status](https://travis-ci.org/mdsumner/scspatstat.svg?branch=master)](https://travis-ci.org/mdsumner/scspatstat) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mdsumner/scspatstat?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/scspatstat) [![Coverage Status](https://img.shields.io/codecov/c/github/mdsumner/scspatstat/master.svg)](https://codecov.io/github/mdsumner/scspatstat?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/hypertidy/scspatstat.svg?branch=master)](https://travis-ci.org/hypertidy/scspatstat) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hypertidy/scspatstat?branch=master&svg=true)](https://ci.appveyor.com/project/hypertidy/scspatstat) [![Coverage Status](https://img.shields.io/codecov/c/github/hypertidy/scspatstat/master.svg)](https://codecov.io/github/hypertidy/scspatstat?branch=master)
 
 scspatstat
 ==========
@@ -15,7 +16,7 @@ This is a basic example showing the component decomposition of a spatstat point 
 
 ``` r
 library(scspatstat)
-#> Loading required package: sc
+#> Loading required package: silicate
 library(dplyr)
 #> 
 #> Attaching package: 'dplyr'
@@ -27,124 +28,124 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 data("chorley", package = "spatstat")
 sc_object(chorley) %>% slice(2L)
-#> # A tibble: 1 × 2
-#>    object_   mark
+#> # A tibble: 1 x 2
+#>     object   mark
 #>      <chr> <fctr>
-#> 1 93e831e6 larynx
+#> 1 850967e8 larynx
 
 data("nbfires", package= "spatstat")
 sc_path(spatstat::as.owin(nbfires))
-#> # A tibble: 6 × 2
-#>   ncoords_    path_
+#> # A tibble: 6 x 2
+#>   ncoords_     path
 #>      <int>    <chr>
-#> 1      500 f11ade8e
-#> 2       92 a9fbc5c7
-#> 3       80 c58f7e1b
-#> 4       54 04434ee3
-#> 5       66 52260cc4
-#> 6       79 313bf035
+#> 1      500 6d5aeb48
+#> 2       54 d4a347ab
+#> 3       92 bc954f25
+#> 4       79 014fb261
+#> 5       66 cc7246b3
+#> 6       80 302fbbe0
 
 print(sc_coord(spatstat::as.owin(nbfires)), n = 5)
-#> # A tibble: 871 × 2
+#> # A tibble: 871 x 2
 #>          x        y
 #>      <dbl>    <dbl>
-#> 1 415.2395 123.7442
-#> 2 415.5546 122.7946
-#> 3 419.1725 122.3231
-#> 4 423.8916 122.6374
-#> 5 429.8691 124.8375
+#> 1 411.6245 122.5687
+#> 2 415.3799 123.7937
+#> 3 415.2395 123.7442
+#> 4 415.5546 122.7946
+#> 5 419.1725 122.3231
 #> # ... with 866 more rows
 ```
 
 With these three components working `sc_coord`, `sc_object` and `sc_path`, and using the framework in `sc`, the parent package can use these *in generic form*. We can already convert to `PATH` and then on to `PRIMITIVE` for these polygonal forms in `spatstat`.
 
 ``` r
-library(sc)
-str(nbfires_path <- sc::PATH(spatstat::as.owin(nbfires)))
+library(scspatstat)
+str(nbfires_path <- silicate::PATH(spatstat::as.owin(nbfires)))
 #> List of 4
 #>  $ object          :Classes 'tbl_df', 'tbl' and 'data.frame':    1 obs. of  5 variables:
 #>   ..$ type      : chr "polygonal"
-#>   ..$ singular  : chr "unit"
-#>   ..$ plural    : chr "units"
-#>   ..$ multiplier: num 1
-#>   ..$ object_   : chr "b24f3831"
+#>   ..$ singular  : chr "km"
+#>   ..$ plural    : chr "km"
+#>   ..$ multiplier: num 0.404
+#>   ..$ object    : chr "113218fe"
 #>  $ path            :Classes 'tbl_df', 'tbl' and 'data.frame':    6 obs. of  2 variables:
-#>   ..$ ncoords_: int [1:6] 500 92 80 54 66 79
-#>   ..$ path_   : chr [1:6] "5599aa70" "61c416e4" "685ab943" "3bd3459e" ...
+#>   ..$ ncoords_: int [1:6] 500 54 92 79 66 80
+#>   ..$ path    : chr [1:6] "928744f7" "5246c1ca" "6ed02ab8" "36a6a050" ...
 #>  $ vertex          :Classes 'tbl_df', 'tbl' and 'data.frame':    871 obs. of  3 variables:
-#>   ..$ x      : num [1:871] 415 416 419 424 430 ...
-#>   ..$ y      : num [1:871] 124 123 122 123 125 ...
-#>   ..$ vertex_: chr [1:871] "1820d2e4" "d0009468" "d7034c5b" "1da209dc" ...
+#>   ..$ x      : num [1:871] 412 415 415 416 419 ...
+#>   ..$ y      : num [1:871] 123 124 124 123 122 ...
+#>   ..$ vertex_: chr [1:871] "80da2a90" "4af905d5" "073a3592" "2e7a3ff3" ...
 #>  $ path_link_vertex:Classes 'tbl_df', 'tbl' and 'data.frame':    871 obs. of  2 variables:
-#>   ..$ path_  : chr [1:871] "5599aa70" "5599aa70" "5599aa70" "5599aa70" ...
-#>   ..$ vertex_: chr [1:871] "1820d2e4" "d0009468" "d7034c5b" "1da209dc" ...
+#>   ..$ path   : chr [1:871] "928744f7" "928744f7" "928744f7" "928744f7" ...
+#>   ..$ vertex_: chr [1:871] "80da2a90" "4af905d5" "073a3592" "2e7a3ff3" ...
 #>  - attr(*, "class")= chr [1:2] "PATH" "sc"
 #>  - attr(*, "join_ramp")= chr [1:4] "object" "path" "path_link_vertex" "vertex"
 
 PRIMITIVE(nbfires_path)
 #> $object
-#> # A tibble: 1 × 5
-#>        type singular plural multiplier  object_
+#> # A tibble: 1 x 5
+#>        type singular plural multiplier   object
 #>       <chr>    <chr>  <chr>      <dbl>    <chr>
-#> 1 polygonal     unit  units          1 b24f3831
+#> 1 polygonal       km     km   0.403716 113218fe
 #> 
 #> $path
-#> # A tibble: 6 × 2
-#>   ncoords_    path_
+#> # A tibble: 6 x 2
+#>   ncoords_     path
 #>      <int>    <chr>
-#> 1      500 5599aa70
-#> 2       92 61c416e4
-#> 3       80 685ab943
-#> 4       54 3bd3459e
-#> 5       66 1341cbc4
-#> 6       79 03afac82
+#> 1      500 928744f7
+#> 2       54 5246c1ca
+#> 3       92 6ed02ab8
+#> 4       79 36a6a050
+#> 5       66 0acda5b9
+#> 6       80 4e42ee2e
 #> 
 #> $vertex
-#> # A tibble: 871 × 3
+#> # A tibble: 871 x 3
 #>           x        y  vertex_
 #>       <dbl>    <dbl>    <chr>
-#> 1  415.2395 123.7442 1820d2e4
-#> 2  415.5546 122.7946 d0009468
-#> 3  419.1725 122.3231 d7034c5b
-#> 4  423.8916 122.6374 1da209dc
-#> 5  429.8691 124.8375 f9e7c883
-#> 6  430.6556 133.0094 18d8926e
-#> 7  435.8466 132.0665 d511fc2e
-#> 8  436.1612 127.6663 3341588f
-#> 9  438.2062 126.8805 653b9e99
-#> 10 445.7567 130.0235 654ac680
+#>  1 411.6245 122.5687 80da2a90
+#>  2 415.3799 123.7937 4af905d5
+#>  3 415.2395 123.7442 073a3592
+#>  4 415.5546 122.7946 2e7a3ff3
+#>  5 419.1725 122.3231 0083f33b
+#>  6 423.8916 122.6374 dc5ef813
+#>  7 429.8691 124.8375 30fd0615
+#>  8 430.6556 133.0094 5f94e0ff
+#>  9 435.8466 132.0665 e970f786
+#> 10 436.1612 127.6663 e84524d1
 #> # ... with 861 more rows
 #> 
 #> $path_link_vertex
-#> # A tibble: 871 × 2
-#>       path_  vertex_
+#> # A tibble: 871 x 2
+#>        path  vertex_
 #>       <chr>    <chr>
-#> 1  5599aa70 1820d2e4
-#> 2  5599aa70 d0009468
-#> 3  5599aa70 d7034c5b
-#> 4  5599aa70 1da209dc
-#> 5  5599aa70 f9e7c883
-#> 6  5599aa70 18d8926e
-#> 7  5599aa70 d511fc2e
-#> 8  5599aa70 3341588f
-#> 9  5599aa70 653b9e99
-#> 10 5599aa70 654ac680
+#>  1 928744f7 80da2a90
+#>  2 928744f7 4af905d5
+#>  3 928744f7 073a3592
+#>  4 928744f7 2e7a3ff3
+#>  5 928744f7 0083f33b
+#>  6 928744f7 dc5ef813
+#>  7 928744f7 30fd0615
+#>  8 928744f7 5f94e0ff
+#>  9 928744f7 e970f786
+#> 10 928744f7 e84524d1
 #> # ... with 861 more rows
 #> 
 #> $segment
-#> # A tibble: 865 × 4
-#>    .vertex0 .vertex1    path_ segment_
+#> # A tibble: 865 x 4
+#>    .vertex0 .vertex1     path segment_
 #>       <chr>    <chr>    <chr>    <chr>
-#> 1  52473e5b ec79904a 03afac82 d7f5d60e
-#> 2  ec79904a 74c509ac 03afac82 b6c9d4b4
-#> 3  74c509ac 49f9efff 03afac82 0e375463
-#> 4  49f9efff e010ca4e 03afac82 5cb7c357
-#> 5  e010ca4e e44c5d73 03afac82 74f35445
-#> 6  e44c5d73 7a9eb055 03afac82 7bf2f23a
-#> 7  7a9eb055 84c9fb30 03afac82 72ba9a56
-#> 8  84c9fb30 ec5a5874 03afac82 d442dbab
-#> 9  ec5a5874 7e051889 03afac82 f227baec
-#> 10 7e051889 81223305 03afac82 ceaa65ea
+#>  1 c0f37c6b 9456a314 0acda5b9 3f5906af
+#>  2 9456a314 5e24d5eb 0acda5b9 b7bac35c
+#>  3 5e24d5eb 359e541a 0acda5b9 61db5b62
+#>  4 359e541a 8f1be03d 0acda5b9 c70f4069
+#>  5 8f1be03d 13ba8b46 0acda5b9 fe836cbd
+#>  6 13ba8b46 a88543ad 0acda5b9 76f27084
+#>  7 a88543ad 100e764b 0acda5b9 8c1cc85f
+#>  8 100e764b 1161f71b 0acda5b9 2ede26fa
+#>  9 1161f71b fb9a7f98 0acda5b9 5ead5264
+#> 10 fb9a7f98 482d3184 0acda5b9 1b774341
 #> # ... with 855 more rows
 #> 
 #> attr(,"class")

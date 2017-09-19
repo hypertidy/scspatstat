@@ -1,14 +1,12 @@
 ---
-output:
-  md_document:
-    variant: markdown_github
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Travis-CI Build Status](https://travis-ci.org/mdsumner/scspatstat.svg?branch=master)](https://travis-ci.org/mdsumner/scspatstat)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mdsumner/scspatstat?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/scspatstat)
-[![Coverage Status](https://img.shields.io/codecov/c/github/mdsumner/scspatstat/master.svg)](https://codecov.io/github/mdsumner/scspatstat?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/hypertidy/scspatstat.svg?branch=master)](https://travis-ci.org/hypertidy/scspatstat)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/hypertidy/scspatstat?branch=master&svg=true)](https://ci.appveyor.com/project/hypertidy/scspatstat)
+[![Coverage Status](https://img.shields.io/codecov/c/github/hypertidy/scspatstat/master.svg)](https://codecov.io/github/hypertidy/scspatstat?branch=master)
 
 
 
@@ -48,8 +46,8 @@ print(sc_coord(spatstat::as.owin(nbfires)), n = 5)
 With these three components working `sc_coord`, `sc_object` and `sc_path`, and using the framework in `sc`,  the parent package can use these *in generic form*. We can already convert to `PATH` and then on to `PRIMITIVE` for these polygonal forms in `spatstat`.
 
 ```{r}
-library(sc)
-str(nbfires_path <- sc::PATH(spatstat::as.owin(nbfires)))
+library(scspatstat)
+str(nbfires_path <- silicate::PATH(spatstat::as.owin(nbfires)))
 
 PRIMITIVE(nbfires_path)
 ```

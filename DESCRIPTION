@@ -1,11 +1,11 @@
 Package: scspatstat
 Title: Common Forms for `spatstat` Structures
-Version: 0.0.0.9001
+Version: 0.0.1
 Authors@R: c(person("Michael D.","Sumner", role = c("aut", "cre"), email = "mdsumner@gmail.com"))
 Description: Provides a generic, common data form for spatstat. 
 Depends:
     R (>= 3.3.2), 
-    sc
+    silicate
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -19,5 +19,5 @@ Imports:
     dplyr,
     spatstat,
     tibble
-Remotes: mdsumner/sc
+Remotes: hypertidy/silicate
 VignetteBuilder: knitr
