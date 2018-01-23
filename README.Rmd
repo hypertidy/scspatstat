@@ -32,10 +32,10 @@ This is a basic example showing the component decomposition of a spatstat point 
 ```{r example}
 library(scspatstat)
 library(dplyr)
-data("chorley", package = "spatstat")
+data("chorley", package = "spatstat.data")
 sc_object(chorley) %>% slice(2L)
 
-data("nbfires", package= "spatstat")
+data("nbfires", package= "spatstat.data")
 sc_path(spatstat::as.owin(nbfires))
 
 print(sc_coord(spatstat::as.owin(nbfires)), n = 5)
@@ -43,15 +43,16 @@ print(sc_coord(spatstat::as.owin(nbfires)), n = 5)
 
 ```
 
-With these three components working `sc_coord`, `sc_object` and `sc_path`, and using the framework in `sc`,  the parent package can use these *in generic form*. We can already convert to `PATH` and then on to `PRIMITIVE` for these polygonal forms in `spatstat`.
+With these three components working `sc_coord`, `sc_object` and `sc_path`, and using the framework in `sc`,  the parent package can use these *in generic form*. We can already convert to `PATH` and then on to other models for these polygonal forms in `spatstat`.
 
 ```{r}
 library(scspatstat)
 str(nbfires_path <- silicate::PATH(spatstat::as.owin(nbfires)))
 
-PRIMITIVE(nbfires_path)
+SC(nbfires_path)
 ```
 
-(Note that only owin is supported so far, we need a way to intermingle structured "windows" and the underly patterns. The patterns may be points and or lines. )
+(Note that `owin` is supported only on its own, and points `ppp` and line segments `psp` are supported separately. We need a way to intermingle structured "windows" and the underlying patterns, but for now I consider that a higher specialization that silicate itself. 
+
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

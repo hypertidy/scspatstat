@@ -2,18 +2,22 @@
 % Please edit documentation in R/scspatstat.r
 \name{sc_object}
 \alias{sc_object}
+\alias{sc_object.ppp}
+\alias{sc_object}
+\alias{sc_object.psp}
+\alias{sc_object}
 \alias{sc_object.owin}
 \alias{sc_object}
 \alias{sc_object.solist}
-\alias{sc_object}
-\alias{sc_object.ppp}
 \title{Object}
 \usage{
+\method{sc_object}{ppp}(x, ...)
+
+\method{sc_object}{psp}(x, ...)
+
 \method{sc_object}{owin}(x, ...)
 
 \method{sc_object}{solist}(x, ...)
-
-\method{sc_object}{ppp}(x, ...)
 }
 \arguments{
 \item{x}{input object}
@@ -21,7 +25,5 @@
 \item{...}{arguments passed to methods}
 }
 \description{
-sc object
-
 sc object for spatstat is the marks, which might be a vector, data.frame or NULL.
 }

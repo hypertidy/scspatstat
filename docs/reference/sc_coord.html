@@ -52,7 +52,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -86,6 +86,12 @@
     
 
     <pre class="usage"><span class='co'># S3 method for owin</span>
+<span class='fu'>sc_coord</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for ppp</span>
+<span class='fu'>sc_coord</span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for psp</span>
 <span class='fu'>sc_coord</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
@@ -107,8 +113,7 @@
 <span class='st'>"murchison"</span>, <span class='st'>"nbfires"</span>, <span class='st'>"urkiola"</span>, <span class='st'>"vesicles"</span>)
 <span class='co'>## all are ppp, but murchison  "solist"  "anylist" "listof"  "list"</span>
 <span class='fu'>library</span>(<span class='no'>spatstat</span>)
-<span class='fu'>data</span>(<span class='kw'>list</span> <span class='kw'>=</span> <span class='no'>irreg_data</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"spatstat"</span>)
-<span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fu'>seq_along</span>(<span class='no'>irreg_data</span>)) {
+<span class='fu'>data</span>(<span class='kw'>list</span> <span class='kw'>=</span> <span class='no'>irreg_data</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"spatstat"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘chorley’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘clmfires’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘demopat’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘gordon’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘gorillas’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘humberside’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘murchison’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘nbfires’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘urkiola’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘vesicles’ not found</span></div><div class='input'><span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fu'>seq_along</span>(<span class='no'>irreg_data</span>)) {
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>get</span>(<span class='no'>irreg_data</span>[<span class='no'>i</span>])
  <span class='co'>#plot(x, main = irreg_data[i])</span>
  <span class='co'># title(sub = paste(class(x), collapse = " "))</span>
@@ -120,97 +125,97 @@
    <span class='co'>#print(sc_object(as.owin(x)))</span>
    <span class='fu'>print</span>(<span class='fu'>sc_object</span>(<span class='no'>x</span>))
 }</div><div class='output co'>#&gt; # A tibble: 1,036 x 2
-#&gt;      object   mark
-#&gt;       &lt;chr&gt; &lt;fctr&gt;
-#&gt;  1 e69d9304 larynx
-#&gt;  2 cd931ea3 larynx
-#&gt;  3 40f5d7d6 larynx
-#&gt;  4 739b0b01 larynx
-#&gt;  5 0f35e765 larynx
-#&gt;  6 8e93bfa0 larynx
-#&gt;  7 7fc8678f larynx
-#&gt;  8 4c99c246 larynx
-#&gt;  9 ca945608 larynx
-#&gt; 10 d82bdd38 larynx
+#&gt;    object_  mark  
+#&gt;    &lt;chr&gt;    &lt;fct&gt; 
+#&gt;  1 c5a7750e larynx
+#&gt;  2 421f0a27 larynx
+#&gt;  3 3db84579 larynx
+#&gt;  4 9f39f981 larynx
+#&gt;  5 8851a98e larynx
+#&gt;  6 cd3a85c5 larynx
+#&gt;  7 15c4b126 larynx
+#&gt;  8 5653db11 larynx
+#&gt;  9 299d784e larynx
+#&gt; 10 1b094cd0 larynx
 #&gt; # ... with 1,026 more rows
 #&gt; NULL
 #&gt; # A tibble: 112 x 2
-#&gt;      object   mark
-#&gt;       &lt;chr&gt; &lt;fctr&gt;
-#&gt;  1 3d36488c      A
-#&gt;  2 e830dbee      B
-#&gt;  3 01e1d66a      B
-#&gt;  4 e02fc3e8      A
-#&gt;  5 1b369bef      B
-#&gt;  6 42145c1a      B
-#&gt;  7 c3889c55      B
-#&gt;  8 edb6d3f0      A
-#&gt;  9 cb2b7d35      A
-#&gt; 10 5d9424de      A
+#&gt;    object_  mark 
+#&gt;    &lt;chr&gt;    &lt;fct&gt;
+#&gt;  1 6f1fae44 A    
+#&gt;  2 29db4a91 B    
+#&gt;  3 9298aa36 B    
+#&gt;  4 cfc07c10 A    
+#&gt;  5 fc876894 B    
+#&gt;  6 0d449cb3 B    
+#&gt;  7 2a98d8d4 B    
+#&gt;  8 f27afc79 A    
+#&gt;  9 ccee7975 A    
+#&gt; 10 18fcf588 A    
 #&gt; # ... with 102 more rows
 #&gt; # A tibble: 99 x 1
-#&gt;      object
-#&gt;       &lt;chr&gt;
-#&gt;  1 c763fcc1
-#&gt;  2 15c716e6
-#&gt;  3 804826bd
-#&gt;  4 e3e869cd
-#&gt;  5 cc8a7b1c
-#&gt;  6 e59e4d13
-#&gt;  7 900ef73a
-#&gt;  8 78571ece
-#&gt;  9 7dee22ee
-#&gt; 10 012a0829
+#&gt;    object_ 
+#&gt;    &lt;chr&gt;   
+#&gt;  1 f5164299
+#&gt;  2 bcc91eb0
+#&gt;  3 1f190fc5
+#&gt;  4 a5d0d560
+#&gt;  5 09702384
+#&gt;  6 c5516750
+#&gt;  7 9be57fa9
+#&gt;  8 7c02bf18
+#&gt;  9 8c91be86
+#&gt; 10 c9a05e74
 #&gt; # ... with 89 more rows
 #&gt; NULL
 #&gt; # A tibble: 203 x 2
-#&gt;      object   mark
-#&gt;       &lt;chr&gt; &lt;fctr&gt;
-#&gt;  1 57876395   case
-#&gt;  2 a587521d   case
-#&gt;  3 0f5efddf   case
-#&gt;  4 84033c15   case
-#&gt;  5 ab5911f2   case
-#&gt;  6 f551a303   case
-#&gt;  7 81039b7d   case
-#&gt;  8 2db4b5ba   case
-#&gt;  9 1c64e4d7   case
-#&gt; 10 46b5ae48   case
+#&gt;    object_  mark 
+#&gt;    &lt;chr&gt;    &lt;fct&gt;
+#&gt;  1 3cabc08d case 
+#&gt;  2 9fad2830 case 
+#&gt;  3 8b9a522d case 
+#&gt;  4 cee68754 case 
+#&gt;  5 b1993493 case 
+#&gt;  6 a6727777 case 
+#&gt;  7 82860693 case 
+#&gt;  8 bb038c4f case 
+#&gt;  9 36aae813 case 
+#&gt; 10 9d95c50d case 
 #&gt; # ... with 193 more rows
 #&gt; NULL
 #&gt; # A tibble: 1,245 x 2
-#&gt;      object   mark
-#&gt;       &lt;chr&gt; &lt;fctr&gt;
-#&gt;  1 9352f55a  birch
-#&gt;  2 9e363f8a  birch
-#&gt;  3 9dd40801  birch
-#&gt;  4 c0a96123  birch
-#&gt;  5 a3c8c6ce  birch
-#&gt;  6 daff78a5  birch
-#&gt;  7 0800111a  birch
-#&gt;  8 1daa872a  birch
-#&gt;  9 766e0217  birch
-#&gt; 10 ba098d9f  birch
+#&gt;    object_  mark 
+#&gt;    &lt;chr&gt;    &lt;fct&gt;
+#&gt;  1 5756a3b1 birch
+#&gt;  2 b5e8e72e birch
+#&gt;  3 9e093553 birch
+#&gt;  4 7c759ec3 birch
+#&gt;  5 bcb5ab92 birch
+#&gt;  6 411687fc birch
+#&gt;  7 ded12729 birch
+#&gt;  8 000402a9 birch
+#&gt;  9 46a739fa birch
+#&gt; 10 9ee350cf birch
 #&gt; # ... with 1,235 more rows
 #&gt; # A tibble: 37 x 1
-#&gt;      object
-#&gt;       &lt;chr&gt;
-#&gt;  1 ae967c28
-#&gt;  2 a2a7b866
-#&gt;  3 7541b7fc
-#&gt;  4 9bab74a7
-#&gt;  5 98a0b66b
-#&gt;  6 5c57f056
-#&gt;  7 97ffd0cc
-#&gt;  8 c23ab5e7
-#&gt;  9 e577709c
-#&gt; 10 cb20c875
+#&gt;    object_ 
+#&gt;    &lt;chr&gt;   
+#&gt;  1 924d46be
+#&gt;  2 dc26e810
+#&gt;  3 ea9b43ee
+#&gt;  4 c087dbb7
+#&gt;  5 0c017362
+#&gt;  6 625eb20d
+#&gt;  7 022ea2b7
+#&gt;  8 bd2335a6
+#&gt;  9 de1738f5
+#&gt; 10 ab0601d9
 #&gt; # ... with 27 more rows</div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/spatstat/topics/as.owin'>as.owin</a></span>(<span class='no'>x</span>)
-<span class='fu'><a href='sc_path.html'>sc_path</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 2
-#&gt;   ncoords_     path
-#&gt;      &lt;int&gt;    &lt;chr&gt;
-#&gt; 1       69 2ec4ae88
-#&gt; 2       23 53cbea9d</div></pre>
+<span class='fu'>sc_path</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 4
+#&gt;   object_ type      ncoords_ path_   
+#&gt;   &lt;chr&gt;   &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;   
+#&gt; 1 1       polygonal       69 2e680b68
+#&gt; 2 2       polygonal       23 cad80d9b</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -229,7 +234,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

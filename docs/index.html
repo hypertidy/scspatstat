@@ -29,7 +29,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="/index.html">
+  <a href="index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -79,36 +79,36 @@
 <span class="co">#&gt; The following objects are masked from 'package:base':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     intersect, setdiff, setequal, union</span>
-<span class="kw">data</span>(<span class="st">"chorley"</span>, <span class="dt">package =</span> <span class="st">"spatstat"</span>)
+<span class="kw">data</span>(<span class="st">"chorley"</span>, <span class="dt">package =</span> <span class="st">"spatstat.data"</span>)
 <span class="kw">sc_object</span>(chorley) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/slice.html">slice</a></span>(2L)
 <span class="co">#&gt; # A tibble: 1 x 2</span>
-<span class="co">#&gt;     object   mark</span>
-<span class="co">#&gt;      &lt;chr&gt; &lt;fctr&gt;</span>
-<span class="co">#&gt; 1 ff257bfc larynx</span>
+<span class="co">#&gt;   object_  mark  </span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;fct&gt; </span>
+<span class="co">#&gt; 1 4d6deb0a larynx</span>
 
-<span class="kw">data</span>(<span class="st">"nbfires"</span>, <span class="dt">package=</span> <span class="st">"spatstat"</span>)
-<span class="kw"><a href="reference/sc_path.html">sc_path</a></span>(spatstat<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/spatstat/topics/as.owin">as.owin</a></span>(nbfires))
-<span class="co">#&gt; # A tibble: 6 x 2</span>
-<span class="co">#&gt;   ncoords_     path</span>
-<span class="co">#&gt;      &lt;int&gt;    &lt;chr&gt;</span>
-<span class="co">#&gt; 1      500 69a2fcce</span>
-<span class="co">#&gt; 2       54 fe58e5b1</span>
-<span class="co">#&gt; 3       92 5a060d27</span>
-<span class="co">#&gt; 4       79 958dfee9</span>
-<span class="co">#&gt; 5       66 792d2fb2</span>
-<span class="co">#&gt; 6       80 ef4f8493</span>
+<span class="kw">data</span>(<span class="st">"nbfires"</span>, <span class="dt">package=</span> <span class="st">"spatstat.data"</span>)
+<span class="kw">sc_path</span>(spatstat<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/spatstat/topics/as.owin">as.owin</a></span>(nbfires))
+<span class="co">#&gt; # A tibble: 6 x 4</span>
+<span class="co">#&gt;   object_ type      ncoords_ path_   </span>
+<span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;   </span>
+<span class="co">#&gt; 1 1       polygonal      500 df2b86d8</span>
+<span class="co">#&gt; 2 2       polygonal       54 220f87bd</span>
+<span class="co">#&gt; 3 3       polygonal       92 77cc26a0</span>
+<span class="co">#&gt; 4 4       polygonal       79 883a627c</span>
+<span class="co">#&gt; 5 5       polygonal       66 f225ff5a</span>
+<span class="co">#&gt; 6 6       polygonal       80 4479cb66</span>
 
-<span class="kw">print</span>(<span class="kw"><a href="reference/sc_coord.html">sc_coord</a></span>(spatstat<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/spatstat/topics/as.owin">as.owin</a></span>(nbfires)), <span class="dt">n =</span> <span class="dv">5</span>)
+<span class="kw">print</span>(<span class="kw">sc_coord</span>(spatstat<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/spatstat/topics/as.owin">as.owin</a></span>(nbfires)), <span class="dt">n =</span> <span class="dv">5</span>)
 <span class="co">#&gt; # A tibble: 871 x 2</span>
-<span class="co">#&gt;          x        y</span>
-<span class="co">#&gt;      &lt;dbl&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 411.6245 122.5687</span>
-<span class="co">#&gt; 2 415.3799 123.7937</span>
-<span class="co">#&gt; 3 415.2395 123.7442</span>
-<span class="co">#&gt; 4 415.5546 122.7946</span>
-<span class="co">#&gt; 5 419.1725 122.3231</span>
+<span class="co">#&gt;       x     y</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1   412   123</span>
+<span class="co">#&gt; 2   415   124</span>
+<span class="co">#&gt; 3   415   124</span>
+<span class="co">#&gt; 4   416   123</span>
+<span class="co">#&gt; 5   419   122</span>
 <span class="co">#&gt; # ... with 866 more rows</span></code></pre></div>
-<p>With these three components working <code>sc_coord</code>, <code>sc_object</code> and <code>sc_path</code>, and using the framework in <code>sc</code>, the parent package can use these <em>in generic form</em>. We can already convert to <code>PATH</code> and then on to <code>PRIMITIVE</code> for these polygonal forms in <code>spatstat</code>.</p>
+<p>With these three components working <code>sc_coord</code>, <code>sc_object</code> and <code>sc_path</code>, and using the framework in <code>sc</code>, the parent package can use these <em>in generic form</em>. We can already convert to <code>PATH</code> and then on to other models for these polygonal forms in <code>spatstat</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(scspatstat)
 <span class="kw">str</span>(nbfires_path &lt;-<span class="st"> </span>silicate<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/silicate/topics/PATH">PATH</a></span>(spatstat<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/spatstat/topics/as.owin">as.owin</a></span>(nbfires)))
 <span class="co">#&gt; List of 4</span>
@@ -117,92 +117,80 @@
 <span class="co">#&gt;   ..$ singular  : chr "km"</span>
 <span class="co">#&gt;   ..$ plural    : chr "km"</span>
 <span class="co">#&gt;   ..$ multiplier: num 0.404</span>
-<span class="co">#&gt;   ..$ object    : chr "8a2f69c5"</span>
-<span class="co">#&gt;  $ path            :Classes 'tbl_df', 'tbl' and 'data.frame':    6 obs. of  2 variables:</span>
+<span class="co">#&gt;   ..$ object_   : chr "5bd6ce1f"</span>
+<span class="co">#&gt;  $ path            :Classes 'tbl_df', 'tbl' and 'data.frame':    6 obs. of  4 variables:</span>
+<span class="co">#&gt;   ..$ object_ : chr [1:6] "1" "2" "3" "4" ...</span>
+<span class="co">#&gt;   ..$ type    : chr [1:6] "polygonal" "polygonal" "polygonal" "polygonal" ...</span>
 <span class="co">#&gt;   ..$ ncoords_: int [1:6] 500 54 92 79 66 80</span>
-<span class="co">#&gt;   ..$ path    : chr [1:6] "1402e782" "d9781839" "cd353c9f" "c9402c46" ...</span>
+<span class="co">#&gt;   ..$ path_   : chr [1:6] "ab9feee4" "09b09d43" "242454eb" "160ea3b7" ...</span>
+<span class="co">#&gt;  $ path_link_vertex:Classes 'tbl_df', 'tbl' and 'data.frame':    871 obs. of  2 variables:</span>
+<span class="co">#&gt;   ..$ path_  : chr [1:871] "ab9feee4" "ab9feee4" "ab9feee4" "ab9feee4" ...</span>
+<span class="co">#&gt;   ..$ vertex_: chr [1:871] "043d5cdc" "78b1e7fe" "6792ba8f" "989d3ee3" ...</span>
 <span class="co">#&gt;  $ vertex          :Classes 'tbl_df', 'tbl' and 'data.frame':    871 obs. of  3 variables:</span>
 <span class="co">#&gt;   ..$ x      : num [1:871] 412 415 415 416 419 ...</span>
 <span class="co">#&gt;   ..$ y      : num [1:871] 123 124 124 123 122 ...</span>
-<span class="co">#&gt;   ..$ vertex_: chr [1:871] "e0852577" "24ba895f" "d64caee4" "78ecbeb3" ...</span>
-<span class="co">#&gt;  $ path_link_vertex:Classes 'tbl_df', 'tbl' and 'data.frame':    871 obs. of  2 variables:</span>
-<span class="co">#&gt;   ..$ path   : chr [1:871] "1402e782" "1402e782" "1402e782" "1402e782" ...</span>
-<span class="co">#&gt;   ..$ vertex_: chr [1:871] "e0852577" "24ba895f" "d64caee4" "78ecbeb3" ...</span>
+<span class="co">#&gt;   ..$ vertex_: chr [1:871] "043d5cdc" "78b1e7fe" "6792ba8f" "989d3ee3" ...</span>
 <span class="co">#&gt;  - attr(*, "class")= chr [1:2] "PATH" "sc"</span>
 <span class="co">#&gt;  - attr(*, "join_ramp")= chr [1:4] "object" "path" "path_link_vertex" "vertex"</span>
 
-<span class="kw">PRIMITIVE</span>(nbfires_path)
+<span class="kw">SC</span>(nbfires_path)
 <span class="co">#&gt; $object</span>
 <span class="co">#&gt; # A tibble: 1 x 5</span>
-<span class="co">#&gt;        type singular plural multiplier   object</span>
-<span class="co">#&gt;       &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;      &lt;dbl&gt;    &lt;chr&gt;</span>
-<span class="co">#&gt; 1 polygonal       km     km   0.403716 8a2f69c5</span>
+<span class="co">#&gt;   type      singular plural multiplier object_ </span>
+<span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;   </span>
+<span class="co">#&gt; 1 polygonal km       km          0.404 5bd6ce1f</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; $path</span>
-<span class="co">#&gt; # A tibble: 6 x 2</span>
-<span class="co">#&gt;   ncoords_     path</span>
-<span class="co">#&gt;      &lt;int&gt;    &lt;chr&gt;</span>
-<span class="co">#&gt; 1      500 1402e782</span>
-<span class="co">#&gt; 2       54 d9781839</span>
-<span class="co">#&gt; 3       92 cd353c9f</span>
-<span class="co">#&gt; 4       79 c9402c46</span>
-<span class="co">#&gt; 5       66 89a344f2</span>
-<span class="co">#&gt; 6       80 27c721d6</span>
+<span class="co">#&gt; $object_link_edge</span>
+<span class="co">#&gt; # A tibble: 865 x 2</span>
+<span class="co">#&gt;    edge_    object_</span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;  </span>
+<span class="co">#&gt;  1 5d0e3ce0 1      </span>
+<span class="co">#&gt;  2 0a08c941 1      </span>
+<span class="co">#&gt;  3 93577984 1      </span>
+<span class="co">#&gt;  4 913625f2 1      </span>
+<span class="co">#&gt;  5 592f80be 1      </span>
+<span class="co">#&gt;  6 6cdb8c2b 1      </span>
+<span class="co">#&gt;  7 7da2283e 1      </span>
+<span class="co">#&gt;  8 a8f672c8 1      </span>
+<span class="co">#&gt;  9 8815dcff 1      </span>
+<span class="co">#&gt; 10 11894f96 1      </span>
+<span class="co">#&gt; # ... with 855 more rows</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $edge</span>
+<span class="co">#&gt; # A tibble: 865 x 3</span>
+<span class="co">#&gt;    .vertex0 .vertex1 edge_   </span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   </span>
+<span class="co">#&gt;  1 043d5cdc 78b1e7fe 5d0e3ce0</span>
+<span class="co">#&gt;  2 78b1e7fe 6792ba8f 0a08c941</span>
+<span class="co">#&gt;  3 6792ba8f 989d3ee3 93577984</span>
+<span class="co">#&gt;  4 989d3ee3 f36602ef 913625f2</span>
+<span class="co">#&gt;  5 f36602ef b49fc18e 592f80be</span>
+<span class="co">#&gt;  6 b49fc18e 3cd04684 6cdb8c2b</span>
+<span class="co">#&gt;  7 3cd04684 02d8e8af 7da2283e</span>
+<span class="co">#&gt;  8 02d8e8af 160ff120 a8f672c8</span>
+<span class="co">#&gt;  9 160ff120 d5202415 8815dcff</span>
+<span class="co">#&gt; 10 d5202415 85e73457 11894f96</span>
+<span class="co">#&gt; # ... with 855 more rows</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $vertex</span>
 <span class="co">#&gt; # A tibble: 871 x 3</span>
-<span class="co">#&gt;           x        y  vertex_</span>
-<span class="co">#&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;chr&gt;</span>
-<span class="co">#&gt;  1 411.6245 122.5687 e0852577</span>
-<span class="co">#&gt;  2 415.3799 123.7937 24ba895f</span>
-<span class="co">#&gt;  3 415.2395 123.7442 d64caee4</span>
-<span class="co">#&gt;  4 415.5546 122.7946 78ecbeb3</span>
-<span class="co">#&gt;  5 419.1725 122.3231 5ce95fad</span>
-<span class="co">#&gt;  6 423.8916 122.6374 aec2e08f</span>
-<span class="co">#&gt;  7 429.8691 124.8375 a689e004</span>
-<span class="co">#&gt;  8 430.6556 133.0094 4802e366</span>
-<span class="co">#&gt;  9 435.8466 132.0665 3d229c70</span>
-<span class="co">#&gt; 10 436.1612 127.6663 0de63a41</span>
+<span class="co">#&gt;        x     y vertex_ </span>
+<span class="co">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   </span>
+<span class="co">#&gt;  1   412   123 043d5cdc</span>
+<span class="co">#&gt;  2   415   124 78b1e7fe</span>
+<span class="co">#&gt;  3   415   124 6792ba8f</span>
+<span class="co">#&gt;  4   416   123 989d3ee3</span>
+<span class="co">#&gt;  5   419   122 f36602ef</span>
+<span class="co">#&gt;  6   424   123 b49fc18e</span>
+<span class="co">#&gt;  7   430   125 3cd04684</span>
+<span class="co">#&gt;  8   431   133 02d8e8af</span>
+<span class="co">#&gt;  9   436   132 160ff120</span>
+<span class="co">#&gt; 10   436   128 d5202415</span>
 <span class="co">#&gt; # ... with 861 more rows</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $path_link_vertex</span>
-<span class="co">#&gt; # A tibble: 871 x 2</span>
-<span class="co">#&gt;        path  vertex_</span>
-<span class="co">#&gt;       &lt;chr&gt;    &lt;chr&gt;</span>
-<span class="co">#&gt;  1 1402e782 e0852577</span>
-<span class="co">#&gt;  2 1402e782 24ba895f</span>
-<span class="co">#&gt;  3 1402e782 d64caee4</span>
-<span class="co">#&gt;  4 1402e782 78ecbeb3</span>
-<span class="co">#&gt;  5 1402e782 5ce95fad</span>
-<span class="co">#&gt;  6 1402e782 aec2e08f</span>
-<span class="co">#&gt;  7 1402e782 a689e004</span>
-<span class="co">#&gt;  8 1402e782 4802e366</span>
-<span class="co">#&gt;  9 1402e782 3d229c70</span>
-<span class="co">#&gt; 10 1402e782 0de63a41</span>
-<span class="co">#&gt; # ... with 861 more rows</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $segment</span>
-<span class="co">#&gt; # A tibble: 865 x 4</span>
-<span class="co">#&gt;    .vertex0 .vertex1     path segment_</span>
-<span class="co">#&gt;       &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;</span>
-<span class="co">#&gt;  1 e0852577 24ba895f 1402e782 c3cdb319</span>
-<span class="co">#&gt;  2 24ba895f d64caee4 1402e782 5f31c520</span>
-<span class="co">#&gt;  3 d64caee4 78ecbeb3 1402e782 79e1ff6a</span>
-<span class="co">#&gt;  4 78ecbeb3 5ce95fad 1402e782 c33669bf</span>
-<span class="co">#&gt;  5 5ce95fad aec2e08f 1402e782 32bc76fc</span>
-<span class="co">#&gt;  6 aec2e08f a689e004 1402e782 c0b1e10d</span>
-<span class="co">#&gt;  7 a689e004 4802e366 1402e782 1bf92181</span>
-<span class="co">#&gt;  8 4802e366 3d229c70 1402e782 aaa28162</span>
-<span class="co">#&gt;  9 3d229c70 0de63a41 1402e782 4a5cd2fd</span>
-<span class="co">#&gt; 10 0de63a41 ed6d0ee8 1402e782 f6fb58e3</span>
-<span class="co">#&gt; # ... with 855 more rows</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; attr(,"class")</span>
-<span class="co">#&gt; [1] "PRIMITIVE" "PATH"      "sc"       </span>
-<span class="co">#&gt; attr(,"join_ramp")</span>
-<span class="co">#&gt; [1] "object"           "path"             "path_link_vertex"</span>
-<span class="co">#&gt; [4] "vertex"</span></code></pre></div>
-<p>(Note that only owin is supported so far, we need a way to intermingle structured “windows” and the underly patterns. The patterns may be points and or lines. )</p>
+<span class="co">#&gt; [1] "SC" "sc"</span></code></pre></div>
+<p>(Note that <code>owin</code> is supported only on its own, and points <code>ppp</code> and line segments <code>psp</code> are supported separately. We need a way to intermingle structured “windows” and the underlying patterns, but for now I consider that a higher specialization that silicate itself.</p>
 <p>Please note that this project is released with a <a href="CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 </div>
 </div>
@@ -233,7 +221,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>

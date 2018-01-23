@@ -3,9 +3,17 @@
 \name{sc_coord}
 \alias{sc_coord}
 \alias{sc_coord.owin}
+\alias{sc_coord}
+\alias{sc_coord.ppp}
+\alias{sc_coord}
+\alias{sc_coord.psp}
 \title{Coord}
 \usage{
 \method{sc_coord}{owin}(x, ...)
+
+\method{sc_coord}{ppp}(x, ...)
+
+\method{sc_coord}{psp}(x, ...)
 }
 \arguments{
 \item{x}{input object}
