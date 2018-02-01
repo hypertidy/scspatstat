@@ -52,7 +52,7 @@ str(nbfires_path <- silicate::PATH(spatstat::as.owin(nbfires)))
 SC(nbfires_path)
 ```
 
-(Note that `owin` is supported only on its own, and points `ppp` and line segments `psp` are supported separately. We need a way to intermingle structured "windows" and the underlying patterns, but for now I consider that a higher specialization that silicate itself. 
+(Note that `owin` is supported only on its own, and points `ppp` and line segments `psp` are supported separately. We need a way to intermingle structured "windows" and the underlying patterns, but for now I consider that a higher specialization than silicate itself. 
 
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

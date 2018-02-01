@@ -112,8 +112,15 @@
     <pre class="examples"><div class='input'><span class='no'>irreg_data</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='st'>"chorley"</span>, <span class='st'>"clmfires"</span>, <span class='st'>"demopat"</span>, <span class='st'>"gordon"</span>, <span class='st'>"gorillas"</span>, <span class='st'>"humberside"</span>,
 <span class='st'>"murchison"</span>, <span class='st'>"nbfires"</span>, <span class='st'>"urkiola"</span>, <span class='st'>"vesicles"</span>)
 <span class='co'>## all are ppp, but murchison  "solist"  "anylist" "listof"  "list"</span>
-<span class='fu'>library</span>(<span class='no'>spatstat</span>)
-<span class='fu'>data</span>(<span class='kw'>list</span> <span class='kw'>=</span> <span class='no'>irreg_data</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"spatstat"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘chorley’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘clmfires’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘demopat’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘gordon’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘gorillas’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘humberside’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘murchison’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘nbfires’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘urkiola’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘vesicles’ not found</span></div><div class='input'><span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fu'>seq_along</span>(<span class='no'>irreg_data</span>)) {
+<span class='fu'>library</span>(<span class='no'>spatstat</span>)</div><div class='output co'>#&gt; <span class='message'>Loading required package: spatstat.data</span></div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘spatstat.data’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked _by_ ‘.GlobalEnv’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    chorley.extra</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: nlme</span></div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘nlme’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:dplyr’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    collapse</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: rpart</span></div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>spatstat 1.54-0       (nickname: ‘Vacuous Mission Statement’) </span>
+#&gt; <span class='message'>For an introduction to spatstat, type ‘beginner’ </span></div><div class='input'><span class='fu'>data</span>(<span class='kw'>list</span> <span class='kw'>=</span> <span class='no'>irreg_data</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"spatstat"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘chorley’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘clmfires’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘demopat’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘gordon’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘gorillas’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘humberside’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘murchison’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘nbfires’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘urkiola’ not found</span></div><div class='output co'>#&gt; <span class='warning'>Warning: data set ‘vesicles’ not found</span></div><div class='input'><span class='kw'>for</span> (<span class='no'>i</span> <span class='kw'>in</span> <span class='fu'>seq_along</span>(<span class='no'>irreg_data</span>)) {
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>get</span>(<span class='no'>irreg_data</span>[<span class='no'>i</span>])
  <span class='co'>#plot(x, main = irreg_data[i])</span>
  <span class='co'># title(sub = paste(class(x), collapse = " "))</span>
@@ -127,95 +134,95 @@
 }</div><div class='output co'>#&gt; # A tibble: 1,036 x 2
 #&gt;    object_  mark  
 #&gt;    &lt;chr&gt;    &lt;fct&gt; 
-#&gt;  1 c5a7750e larynx
-#&gt;  2 421f0a27 larynx
-#&gt;  3 3db84579 larynx
-#&gt;  4 9f39f981 larynx
-#&gt;  5 8851a98e larynx
-#&gt;  6 cd3a85c5 larynx
-#&gt;  7 15c4b126 larynx
-#&gt;  8 5653db11 larynx
-#&gt;  9 299d784e larynx
-#&gt; 10 1b094cd0 larynx
+#&gt;  1 2e31d964 larynx
+#&gt;  2 1328df79 larynx
+#&gt;  3 473dc584 larynx
+#&gt;  4 11ef5484 larynx
+#&gt;  5 2aaf9fb0 larynx
+#&gt;  6 4b44ab9c larynx
+#&gt;  7 a1b63ea6 larynx
+#&gt;  8 194f525b larynx
+#&gt;  9 67fd6a90 larynx
+#&gt; 10 6f56165e larynx
 #&gt; # ... with 1,026 more rows
 #&gt; NULL
 #&gt; # A tibble: 112 x 2
 #&gt;    object_  mark 
 #&gt;    &lt;chr&gt;    &lt;fct&gt;
-#&gt;  1 6f1fae44 A    
-#&gt;  2 29db4a91 B    
-#&gt;  3 9298aa36 B    
-#&gt;  4 cfc07c10 A    
-#&gt;  5 fc876894 B    
-#&gt;  6 0d449cb3 B    
-#&gt;  7 2a98d8d4 B    
-#&gt;  8 f27afc79 A    
-#&gt;  9 ccee7975 A    
-#&gt; 10 18fcf588 A    
+#&gt;  1 623f2aa0 A    
+#&gt;  2 70c4a478 B    
+#&gt;  3 7f4c7ec0 B    
+#&gt;  4 d34e5a72 A    
+#&gt;  5 3f2c8a3a B    
+#&gt;  6 d4fcdb6d B    
+#&gt;  7 d81dae0b B    
+#&gt;  8 08cc07b0 A    
+#&gt;  9 27da4f29 A    
+#&gt; 10 e687741b A    
 #&gt; # ... with 102 more rows
 #&gt; # A tibble: 99 x 1
 #&gt;    object_ 
 #&gt;    &lt;chr&gt;   
-#&gt;  1 f5164299
-#&gt;  2 bcc91eb0
-#&gt;  3 1f190fc5
-#&gt;  4 a5d0d560
-#&gt;  5 09702384
-#&gt;  6 c5516750
-#&gt;  7 9be57fa9
-#&gt;  8 7c02bf18
-#&gt;  9 8c91be86
-#&gt; 10 c9a05e74
+#&gt;  1 9d9fda98
+#&gt;  2 798ec74a
+#&gt;  3 61b21434
+#&gt;  4 fe2e0c3c
+#&gt;  5 78ba088b
+#&gt;  6 f9e69456
+#&gt;  7 9585ecf6
+#&gt;  8 9f11b62f
+#&gt;  9 586ba2cf
+#&gt; 10 81726e88
 #&gt; # ... with 89 more rows
 #&gt; NULL
 #&gt; # A tibble: 203 x 2
 #&gt;    object_  mark 
 #&gt;    &lt;chr&gt;    &lt;fct&gt;
-#&gt;  1 3cabc08d case 
-#&gt;  2 9fad2830 case 
-#&gt;  3 8b9a522d case 
-#&gt;  4 cee68754 case 
-#&gt;  5 b1993493 case 
-#&gt;  6 a6727777 case 
-#&gt;  7 82860693 case 
-#&gt;  8 bb038c4f case 
-#&gt;  9 36aae813 case 
-#&gt; 10 9d95c50d case 
+#&gt;  1 9f957657 case 
+#&gt;  2 d7d689cd case 
+#&gt;  3 8adbf2bc case 
+#&gt;  4 3782b184 case 
+#&gt;  5 c30c00ae case 
+#&gt;  6 27cc408b case 
+#&gt;  7 c3e15e59 case 
+#&gt;  8 e75468af case 
+#&gt;  9 d495623c case 
+#&gt; 10 857356c0 case 
 #&gt; # ... with 193 more rows
 #&gt; NULL
 #&gt; # A tibble: 1,245 x 2
 #&gt;    object_  mark 
 #&gt;    &lt;chr&gt;    &lt;fct&gt;
-#&gt;  1 5756a3b1 birch
-#&gt;  2 b5e8e72e birch
-#&gt;  3 9e093553 birch
-#&gt;  4 7c759ec3 birch
-#&gt;  5 bcb5ab92 birch
-#&gt;  6 411687fc birch
-#&gt;  7 ded12729 birch
-#&gt;  8 000402a9 birch
-#&gt;  9 46a739fa birch
-#&gt; 10 9ee350cf birch
+#&gt;  1 57319b8a birch
+#&gt;  2 eec0430a birch
+#&gt;  3 33c4e25e birch
+#&gt;  4 3f463616 birch
+#&gt;  5 c2a30717 birch
+#&gt;  6 45383cb4 birch
+#&gt;  7 d8574d33 birch
+#&gt;  8 2cc53d8f birch
+#&gt;  9 a9e720d1 birch
+#&gt; 10 b5179bfc birch
 #&gt; # ... with 1,235 more rows
 #&gt; # A tibble: 37 x 1
 #&gt;    object_ 
 #&gt;    &lt;chr&gt;   
-#&gt;  1 924d46be
-#&gt;  2 dc26e810
-#&gt;  3 ea9b43ee
-#&gt;  4 c087dbb7
-#&gt;  5 0c017362
-#&gt;  6 625eb20d
-#&gt;  7 022ea2b7
-#&gt;  8 bd2335a6
-#&gt;  9 de1738f5
-#&gt; 10 ab0601d9
+#&gt;  1 5584916c
+#&gt;  2 897188d9
+#&gt;  3 04bdcaf1
+#&gt;  4 de7e81d2
+#&gt;  5 598a193b
+#&gt;  6 5ee04c72
+#&gt;  7 65c68754
+#&gt;  8 b3fea955
+#&gt;  9 cd71dfd0
+#&gt; 10 97631d60
 #&gt; # ... with 27 more rows</div><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/spatstat/topics/as.owin'>as.owin</a></span>(<span class='no'>x</span>)
 <span class='fu'>sc_path</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 4
 #&gt;   object_ type      ncoords_ path_   
 #&gt;   &lt;chr&gt;   &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;   
-#&gt; 1 1       polygonal       69 2e680b68
-#&gt; 2 2       polygonal       23 cad80d9b</div></pre>
+#&gt; 1 1       polygonal       69 ce048480
+#&gt; 2 2       polygonal       23 35976114</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
